@@ -1,0 +1,28 @@
+﻿@inherits LayoutComponentBase
+@inject IJSRuntime JS
+
+
+<tsp.client.Layout.Topbar.TopbarComponent />
+<NavMenu />
+
+<div class="page-wrapper">
+    <!-- Page Content-->
+    <div class="page-content">
+        @Body
+
+        <tsp.client.Layout.Footer.FooterComponent />
+
+    </div>
+</div>
+
+
+@code {
+    private IJSObjectReference? module;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await JS.InvokeAsync<IJSObjectReference>("import","./assets/libs/bootstrap/js/bootstrap.bundle.min.js");
+        await JS.InvokeAsync<IJSObjectReference>("import","./assets/libs/simplebar/simplebar.min.js");
+        await JS.InvokeAsync<IJSObjectReference>("import","./assets/js/webapp.js");
+    }
+}
