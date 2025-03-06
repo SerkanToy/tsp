@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System.Configuration;
 using tsp.api.Domain.Core.Entities.Users;
 using tsp.api.Domain.Database.Context;
 
@@ -10,9 +9,9 @@ namespace tsp.api.Domain.Extensions
 {
     public static class AddCustomIdentity
     {
-        public static void IdentityAdd(this IServiceCollection services)
-        {
-            services.AddIdentity<User, Role>()
+        public static void IdentityAdd(this IServiceCollection services, WebApplicationBuilder? builder = null)
+        {            
+            services.AddIdentity<User, Role>()                
                 .AddEntityFrameworkStores<CommerceContext>()
                 .AddDefaultTokenProviders();
             services.AddAuthentication(options =>

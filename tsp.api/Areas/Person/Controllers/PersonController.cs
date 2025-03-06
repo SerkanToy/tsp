@@ -8,6 +8,10 @@ namespace tsp.api.Areas.Person.Controllers
     [ApiController]
     public class PersonController : ControllerBase
     {
+        public PersonController()
+        {
+            
+        }
         public List<User> GetAll()
         {
             return new List<User>

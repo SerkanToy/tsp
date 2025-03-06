@@ -11,7 +11,5 @@ namespace tsp.api.Domain.Core.Entities.Users
         }
         public string Name { get; set; }
         public string SurName { get; set; }
-        [NotMapped]
-        public ICollection<Role> Roles { get; set; }
     }
 }
