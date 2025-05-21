@@ -1,0 +1,6 @@
+@tsp.Broadcast_HostAddress = http://localhost:5243
+
+GET {{tsp.Broadcast_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
