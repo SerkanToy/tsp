@@ -6,9 +6,9 @@ namespace tsp.Domain.Entities
     {
         public Category()
         {
-            CategoryAndSub = new List<CategoryAndSub>();
+            SubCategory = new List<SubCategory>();
         }
         public string Name { get; set; }
-        public ICollection<CategoryAndSub> CategoryAndSub { get; set; }
+        public ICollection<SubCategory> SubCategory { get; set; }
     }
 }

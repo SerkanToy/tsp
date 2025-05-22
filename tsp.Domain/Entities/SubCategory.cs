@@ -1,4 +1,5 @@
-﻿using tsp.Domain.Common;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using tsp.Domain.Common;
 
 namespace tsp.Domain.Entities
 {
@@ -6,9 +7,10 @@ namespace tsp.Domain.Entities
     {
         public SubCategory()
         {
-            CategoryAndSub = new List<CategoryAndSub>();
         }
         public string Name { get; set; }
-        public ICollection<CategoryAndSub> CategoryAndSub { get; set; }
+        [ForeignKey(nameof(Category))]
+        public string CategoryId { get; set; }        
+        public Category Category { get; set; }
     }
 }
