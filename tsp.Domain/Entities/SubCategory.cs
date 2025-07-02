@@ -8,9 +8,9 @@ namespace tsp.Domain.Entities
         public SubCategory()
         {
         }
+
         public string Name { get; set; }
-        [ForeignKey(nameof(Category))]
-        public string CategoryId { get; set; }        
+        public Guid CategoryId { get; set; }        
         public Category Category { get; set; }
     }
 }

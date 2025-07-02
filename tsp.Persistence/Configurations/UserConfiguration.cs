@@ -16,7 +16,7 @@ namespace tsp.Persistence.Configurations
         public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.HasKey(x => x.Id);
-            //builder.HasData(User());
+            builder.HasData(User());
         }
         private User User()
         {

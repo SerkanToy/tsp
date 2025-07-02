@@ -9,7 +9,7 @@ namespace tsp.Persistence.Configurations
         public void Configure(EntityTypeBuilder<SubCategory> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.HasOne(x => x.Category).WithMany(x => x.SubCategory).HasForeignKey(x => x.CategoryId).OnDelete(DeleteBehavior.NoAction); 
+            builder.HasOne(x => x.Category).WithMany(x => x.SubCategory).HasForeignKey(f => f.CategoryId).OnDelete(DeleteBehavior.NoAction); 
         }
     }
 }

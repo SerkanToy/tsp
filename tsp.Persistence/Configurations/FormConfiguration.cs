@@ -16,7 +16,6 @@ namespace tsp.Persistence.Configurations
         public void Configure(EntityTypeBuilder<Form> builder)
         {
             builder.HasKey(x => x.Id);
-            //builder.HasMany(x => x.).WithMany(x => x.CategoryAndSub).HasForeignKey(x => x.CategoryId).OnDelete(DeleteBehavior.NoAction);  
         }
     }
 }
